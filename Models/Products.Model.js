@@ -3,25 +3,24 @@ import { DataTypes, Model } from "sequelize";
 const TABLE_NAME = "products"
 
 class Product extends Model {
-    id 
-    name 
 }
 
 const initModel = (sequelize) => {
     Product.init({
         id: {
-            allowNull: false,
             primaryKey: true,
-            type: DataTypes.UUID
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4
         },
         name: {
+            type: DataTypes.STRING,
             allowNull: false,
-            type: DataTypes.STRING
         }
     }, {
         sequelize,
         timestamps: false,
         tableName: TABLE_NAME,
+        modelName: "Product"
     })
 }
 
