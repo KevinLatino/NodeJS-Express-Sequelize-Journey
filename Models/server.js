@@ -2,6 +2,7 @@ import express from 'express'
 import db from "../Config/connection.js"
 import { initializeModels } from './initialization.js'
 import routerApi from '../Routes/index.js';
+import initAssociations from './associations.js';
 
 class Server {
 
@@ -17,7 +18,8 @@ class Server {
         try {
             await db.authenticate();
             initializeModels();
-            await db.sync({ force: true });
+            initAssociations();
+            await db.sync({ alter: true });
             console.log('running');
         } catch (error) {
             throw (error);
