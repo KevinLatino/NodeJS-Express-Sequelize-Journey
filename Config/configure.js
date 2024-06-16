@@ -1,0 +1,1 @@
+DATABASE_URI="postgresql://neondb_owner:VxhR5p0lFSIq@ep-withered-star-a5q6slvl.us-east-2.aws.neon.tech/neondb?sslmode=requires"

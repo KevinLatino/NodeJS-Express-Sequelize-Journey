@@ -15,6 +15,10 @@ const initModel = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        owner: {
+            allowNull: false,
+            type: DataTypes.STRING
         }
     }, {
         sequelize,
