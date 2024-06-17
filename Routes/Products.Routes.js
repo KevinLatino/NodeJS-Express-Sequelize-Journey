@@ -1,10 +1,9 @@
-import express from 'express';
+import Router from 'express';
 import ProductService from '../Services/Product.Services.js';
 
 const services = new ProductService();
-const router = express.Router();
+const router = Router();
 
-router.use(express.json());
 
 router.get('/list', async (req, res) => {
     try {

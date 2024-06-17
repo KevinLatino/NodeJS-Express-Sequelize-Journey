@@ -5,7 +5,7 @@ const TABLE_NAME = "products"
 
 class Product extends Model { }
 
-const initModel = (sequelize) => {
+const initProductModel = (sequelize) => {
     Product.init({
         id: {
             primaryKey: true,
@@ -37,4 +37,4 @@ const initModel = (sequelize) => {
     })
 }
 
-export { initModel, Product };
+export { initProductModel, Product };

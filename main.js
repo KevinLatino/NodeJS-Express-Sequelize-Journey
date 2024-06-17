@@ -2,29 +2,30 @@ import express from 'express';
 import routerApi from './Routes/index.js';
 import cors from 'cors';
 import initializeModels from './Models/initialization.js';
-import initAssociations from './Models/associations.js';
+import initializeAssociations from './Models/associations.js';
 import db from './Config/connection.js';
 
 const app = express();
 const port = 3000;
 
+app.use(express.json());
 app.use(cors());
 
-app.listen(port, () => console.log(`running on port ${port}`));
-
-const dbConnection = async () => {
+const initializeDatabase = async () => {
     try {
         await db.authenticate();
         initializeModels();
-        initAssociations();
+        initializeAssociations();
         await db.sync({ alter: true });
-        console.log('running');
+        console.log(`running on port ${port}`);
     } catch (error) {
         throw (error);
     }
 }
 
-dbConnection();
+app.listen(port, () => console.log(`running on port ${port}`));
+
+initializeDatabase();
 
 routerApi(app);
 

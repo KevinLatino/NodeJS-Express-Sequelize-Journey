@@ -1,10 +1,8 @@
-import express from 'express';
+import Router from 'express';
 import StoreServices from '../Services/Store.Services.js';
 
 const Services = new StoreServices();
-const router = express.Router();
-
-router.use(express.json());
+const router = Router();
 
 router.get('/list', async (req, res) => {
     const getStores = await Services.getStores();
