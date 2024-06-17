@@ -1,7 +1,6 @@
 import { Product } from "../Models/Products.Model.js";
 
 class ProductService {
-    constructor() { }
 
     async findByPk(id) {
         const findAllProducts = await Product.findByPk(id);

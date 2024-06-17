@@ -1,8 +1,9 @@
 import { Model, DataTypes } from "sequelize";
+import { PROVIDERS_TABLE } from './Providers.Model.js'
 
 const STORE_TABLE = "store";
 
-class Store extends Model {};
+class Store extends Model { };
 
 const initStoreModel = (sequelize) => {
     Store.init({
@@ -10,12 +11,23 @@ const initStoreModel = (sequelize) => {
             primaryKey: true,
             allowNull: false,
             autoIncrement: true,
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
         name: {
             allowNull: false,
             type: DataTypes.STRING
+        },
+        providerId: {
+            unique: false,
+            field: "provider_id",
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: PROVIDERS_TABLE,
+                key: "id"
+            }
         }
+        
     }, {
         sequelize,
         modelName: "Store",
@@ -24,4 +36,4 @@ const initStoreModel = (sequelize) => {
     })
 }
 
-export {STORE_TABLE, Store, initStoreModel};
+export { STORE_TABLE, Store, initStoreModel };

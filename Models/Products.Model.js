@@ -1,5 +1,5 @@
 import { DataTypes, Model } from "sequelize";
-import { Store, STORE_TABLE } from './Store.Model.js'
+import { STORE_TABLE } from './Store.Model.js'
 
 const TABLE_NAME = "products"
 
