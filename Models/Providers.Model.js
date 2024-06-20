@@ -2,7 +2,7 @@ import { Model, DataTypes } from "sequelize";
 
 const PROVIDERS_TABLE = "providers";
 
-class Providers extends Model {};
+class Providers extends Model { };
 
 const initProvidersModel = (sequelize) => {
     Providers.init({
@@ -15,7 +15,7 @@ const initProvidersModel = (sequelize) => {
         name: {
             allowNull: false,
             type: DataTypes.STRING
-        }
+        },
     }, {
         sequelize,
         modelName: "Providers",
@@ -24,5 +24,5 @@ const initProvidersModel = (sequelize) => {
     })
 }
 
-export {PROVIDERS_TABLE, Providers, initProvidersModel};
+export { PROVIDERS_TABLE, Providers, initProvidersModel };
 
