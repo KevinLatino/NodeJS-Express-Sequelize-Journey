@@ -14,7 +14,7 @@ const initializeAssociations = () => {
     Store.belongsTo(Providers, { as: "provider" });
 
     //A reward can have many task, but a task just can have a reward
-    Rewards.hasMany(Task, { as: "task", foreignKey: "rewardId" });
+    Rewards.hasMany(Task, { as: "tasks", foreignKey: "rewardId" });
     Task.belongsTo(Rewards, { as: "rewards" })
 
 }

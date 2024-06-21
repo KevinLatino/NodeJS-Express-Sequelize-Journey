@@ -25,7 +25,9 @@ const initTaskModel = (sequelize) => {
             references: {
                 model: REWARDS_TABLE,
                 key: "id"
-            }
+            },
+            onUpdate: "CASCADE",
+            onDelete: "SET NULL"
         }
     }, {
         sequelize,

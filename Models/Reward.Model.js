@@ -4,7 +4,7 @@ const REWARDS_TABLE = "rewards"
 
 class Rewards extends Model {};
 
-const initTaskModel = (sequelize) => {
+const initRewardModel = (sequelize) => {
     Rewards.init({
         id: {
             type: DataTypes.INTEGER,
@@ -24,4 +24,4 @@ const initTaskModel = (sequelize) => {
     })
 }
 
-export {REWARDS_TABLE, Rewards, initTaskModel};
+export {REWARDS_TABLE, Rewards, initRewardModel};
