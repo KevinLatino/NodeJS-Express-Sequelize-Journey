@@ -7,15 +7,14 @@ import { Task } from "./Task.Models.js";
 const initializeAssociations = () => {
 
     //A product must have a Store, and a Store must have a product
-    Product.belongsTo(Store, { as: "store" });
+    Product.belongsTo(Store, { as: "store" })
 
     //A provider can have many stores, but a store just can have a provider
-    Providers.hasMany(Store, { as: "store", foreignKey: "providerId" });
-    Store.belongsTo(Providers, { as: "provider" });
+    Providers.hasMany(Store, { as: "store", foreignKey: "providerId" })
+    Store.belongsTo(Providers, { as: "provider" })
 
-    //A reward can have many task, but a task just can have a reward
-    Rewards.hasMany(Task, { as: "tasks", foreignKey: "rewardId" });
-    Task.belongsTo(Rewards, { as: "rewards" })
+    Rewards.hasMany(Task, { as: "task", foreignKey: "rewardId" })
+    Task.belongsTo(Rewards, {as: "reward"})
 
 }
 

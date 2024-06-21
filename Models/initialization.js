@@ -7,10 +7,14 @@ import db from "../Config/connection.js";
 
 const initializeModels = () => {
     initProductModel(db);
+
     initStoreModel(db);
+
     initProvidersModel(db);
-    initTaskModel(db);
+
     initRewardModel(db);
+    
+    initTaskModel(db);
 }
 
 export default initializeModels

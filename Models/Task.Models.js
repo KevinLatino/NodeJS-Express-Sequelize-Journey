@@ -21,7 +21,7 @@ const initTaskModel = (sequelize) => {
             unique: false,
             field: "reward_id",
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: REWARDS_TABLE,
                 key: "id"
