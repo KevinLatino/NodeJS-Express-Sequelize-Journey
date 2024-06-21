@@ -1,11 +1,11 @@
 import { Model, DataTypes } from "sequelize";
 
-const TASKS_TABLE = "tasks"
+const REWARDS_TABLE = "rewards"
 
-class Task extends Model {};
+class Rewards extends Model {};
 
 const initTaskModel = (sequelize) => {
-    Task.init({
+    Rewards.init({
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -18,10 +18,10 @@ const initTaskModel = (sequelize) => {
         }
     }, {
         sequelize,
-        modelName: "Task",
-        tableName: TASKS_TABLE,
+        modelName: "Rewards",
+        tableName: REWARDS_TABLE,
         timestamps: false
     })
 }
 
-export {TASKS_TABLE, Task, initTaskModel};
+export {REWARDS_TABLE, Rewards, initTaskModel};
