@@ -1,8 +1,9 @@
 import { Model, DataTypes } from "sequelize";
+import { REWARDS_TABLE } from "./Reward.Model.js";
 
 const TASKS_TABLE = "tasks"
 
-class Task extends Model {};
+class Task extends Model { };
 
 const initTaskModel = (sequelize) => {
     Task.init({
@@ -15,6 +16,16 @@ const initTaskModel = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        rewardId: {
+            unique: false,
+            field: "reward_id",
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: REWARDS_TABLE,
+                key: "id"
+            }
         }
     }, {
         sequelize,
@@ -24,4 +35,4 @@ const initTaskModel = (sequelize) => {
     })
 }
 
-export {TASKS_TABLE, Task, initTaskModel};
+export { TASKS_TABLE, Task, initTaskModel };
