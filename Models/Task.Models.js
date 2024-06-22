@@ -16,18 +16,6 @@ const initTaskModel = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        rewardId: {
-            unique: false,
-            field: "reward_id",
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            references: {
-                model: REWARDS_TABLE,
-                key: "id"
-            },
-            onUpdate: "CASCADE",
-            onDelete: "SET NULL"
         }
     }, {
         sequelize,

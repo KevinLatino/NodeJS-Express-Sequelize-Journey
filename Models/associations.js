@@ -13,9 +13,7 @@ const initializeAssociations = () => {
     Providers.hasMany(Store, { as: "store", foreignKey: "providerId" })
     Store.belongsTo(Providers, { as: "provider" })
 
-    //A reward can have maby tasks, but taks just can have a reward 
-    Rewards.hasMany(Task, { as: "task", foreignKey: "rewardId" })
-    Task.belongsTo(Rewards, {as: "reward"})
+    //
 
 }
 
