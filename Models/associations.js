@@ -13,7 +13,7 @@ const initializeAssociations = () => {
     Providers.hasMany(Store, { as: "store", foreignKey: "providerId" })
     Store.belongsTo(Providers, { as: "provider" })
 
-    //
+    
 
 }
 

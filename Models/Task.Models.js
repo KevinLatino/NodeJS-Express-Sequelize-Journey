@@ -1,5 +1,4 @@
 import { Model, DataTypes } from "sequelize";
-import { REWARDS_TABLE } from "./Reward.Model.js";
 
 const TASKS_TABLE = "tasks"
 
