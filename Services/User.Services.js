@@ -12,6 +12,13 @@ class UserService {
         delete create.dataValues.password
         return create
     }
+
+    async findByEmail(email) {
+        const findEmail = await User.findOne({
+            where: { email }
+        })
+        return findEmail
+    }
 }
 
 export default UserService
