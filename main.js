@@ -25,9 +25,9 @@ const initializeDatabase = async () => {
 
 app.listen(port, () => console.log(`running on port ${port}`));
 
-initializeDatabase();
-
 routerApi(app);
+
+initializeDatabase();
 
 
 
