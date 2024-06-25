@@ -5,11 +5,7 @@ import UserService from "../../Services/User.Services.js";
 
 const service = new UserService();
 
-const localStrategy = new Strategy({
-    usernameField: "email",
-    passwordField: "password"
-    },
-    async (email, password, done) => {
+const localStrategy = new Strategy({usernameField: "email",passwordField: "password"}, async (email, password, done) => {
         try {
             const user = await service.findByEmail(email);
             if (!user) {
@@ -24,7 +20,8 @@ const localStrategy = new Strategy({
         } catch (error) {
             done(error, false);
         }
-    });
+    }
+);
 
 
 
