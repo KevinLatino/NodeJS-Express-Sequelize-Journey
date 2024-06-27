@@ -15,8 +15,8 @@ class UserServices {
     }
 
     async findEmail(email) {
-        const findByEmail =  await User.findOne({
-            where: email
+        const findByEmail = await User.findOne({
+            where: { email: email }
         })
         return findByEmail
     }

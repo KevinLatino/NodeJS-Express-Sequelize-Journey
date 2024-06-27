@@ -10,7 +10,8 @@ const routerApi = (app) => {
     app.use('/stores', StoreRoutes);
     app.use('/providers', ProviderRoutes);
     app.use('/rewards', RewardRoutes);
-    app.use('/user', UserRoutes)
+    app.use('/user', UserRoutes);
+    app.use('/Auth', AuthRoutes)
 }
 
 export default routerApi;

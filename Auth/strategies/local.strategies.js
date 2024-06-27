@@ -13,7 +13,7 @@ const localStrategy = new Strategy({ usernameField: "email", passwordField: "pas
             done(boom.unauthorized(), false)
         }
         const passwordMatched = await bcrypt.compare(password, user.password)
-        if (!password) {
+        if (!passwordMatched) {
             done(boom.unauthorized(), false)
         }
         delete user.dataValues.password
