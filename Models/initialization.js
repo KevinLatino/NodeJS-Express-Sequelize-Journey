@@ -4,7 +4,6 @@ import { initProvidersModel } from "./Providers.Model.js";
 import { initTaskModel } from "./Task.Models.js";
 import { initRewardModel } from "./Reward.Model.js";
 import { initRewardTaskModel } from "./Reward-Task.model.js";
-import { initUserModel } from "./User.Model.js";
 import db from "../Config/connection.js";
 
 const initializeModels = () => {
@@ -20,7 +19,6 @@ const initializeModels = () => {
 
     initRewardTaskModel(db);
 
-    initUserModel(db);
 }
 
 export default initializeModels

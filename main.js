@@ -3,7 +3,6 @@ import routerApi from './Routes/index.js';
 import cors from 'cors';
 import initializeModels from './Models/initialization.js';
 import initializeAssociations from './Models/associations.js';
-import initStrategies from './Auth/initStrategies.js';
 import db from './Config/connection.js';
 
 const app = express();
@@ -18,7 +17,6 @@ const initializeDatabase = async () => {
         await db.authenticate();
         initializeModels();
         initializeAssociations();
-        initStrategies()
         await db.sync({ alter: true });
         console.log(`running on port ${port}`);
     } catch (error) {
