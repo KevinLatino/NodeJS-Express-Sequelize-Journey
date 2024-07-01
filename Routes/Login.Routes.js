@@ -3,7 +3,6 @@ import passport from "passport";
 
 const router = Router();
 
-
 router.post('/login', passport.authenticate('local', {session: false}), async (req, res, next) => {
     try {
         res.json(req.user)
@@ -12,4 +11,4 @@ router.post('/login', passport.authenticate('local', {session: false}), async (r
     }
 })
 
-export default router
+export default router;

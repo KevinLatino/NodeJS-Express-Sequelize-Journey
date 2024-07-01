@@ -1,8 +1,8 @@
-import { Model, DataTypes } from "sequelize";
+import { DataTypes, Model, Sequelize } from "sequelize";
 
-const TABLE_NAME = "users"
+const TABLE_NAME = 'users'
 
-class User extends Model {}
+class User extends Model { }
 
 const initUserModel = (sequelize) => {
     User.init({
@@ -18,7 +18,7 @@ const initUserModel = (sequelize) => {
         password: {
             allowNull: false,
             type: DataTypes.STRING
-        }
+        },
     }, {
         sequelize,
         modelName: "User",
@@ -27,4 +27,4 @@ const initUserModel = (sequelize) => {
     })
 }
 
-export {TABLE_NAME, User, initUserModel}
+export { TABLE_NAME, User, initUserModel }

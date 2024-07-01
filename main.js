@@ -3,8 +3,8 @@ import routerApi from './Routes/index.js';
 import cors from 'cors';
 import initializeModels from './Models/initialization.js';
 import initializeAssociations from './Models/associations.js';
-import initStrategies from './Auth/init.strategies.js';
 import db from './Config/connection.js';
+import initStrategies from './Auth/initStrategies.js';
 
 const app = express();
 const port = 3000;

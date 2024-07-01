@@ -7,6 +7,7 @@ import { initRewardTaskModel } from "./Reward-Task.model.js";
 import { initUserModel } from "./User.Model.js";
 import db from "../Config/connection.js";
 
+
 const initializeModels = () => {
     initProductModel(db);
 

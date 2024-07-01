@@ -1,13 +1,13 @@
 import { Router } from "express";
-import UserServices from "../Services/User.Services.js";
+import UserServices from '../Services/User.Model.js'
 
 const userServices = new UserServices();
-const router = Router()
+const router = Router();
 
 router.post('/create', async (req, res) => {
-    const bodyUser = req.body
-    const newUser = await userServices.createUSer(bodyUser)
-    res.json(newUser);
+    const body = req.body;
+    const create = await userServices.createUser(body);
+    res.json(create)
 })
 
-export default router
+export default router;
