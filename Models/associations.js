@@ -4,6 +4,7 @@ import { Providers } from "./Providers.Model.js";
 import { Rewards } from "./Reward.Model.js";
 import { Task } from "./Task.Models.js";
 import { RewardProduct } from "./Reward-Task.model.js";
+import { User } from "./User.Model.js";
 
 const initializeAssociations = () => {
 
@@ -15,8 +16,11 @@ const initializeAssociations = () => {
     Store.belongsTo(Providers, { as: "provider" })
 
     //A Reward can have many tasks and a task can have many rewards
-    Rewards.belongsToMany(Task, {as: "task", through: RewardProduct, foreignKey: "rewardId", otherKey: "taskId"});
-    Task.belongsToMany(Rewards, {as: "reward", through: RewardProduct, foreignKey: "taskId", otherKey: "rewardId"});
+    Rewards.belongsToMany(Task, { as: "task", through: RewardProduct, foreignKey: "rewardId", otherKey: "taskId" });
+    Task.belongsToMany(Rewards, { as: "reward", through: RewardProduct, foreignKey: "taskId", otherKey: "rewardId" });
+
+    User.hasMany(Rewards, { as: "reward", foreignKey: "userId" })
+    Rewards.belongsTo(User, { as: "user" })
 
 }
 
