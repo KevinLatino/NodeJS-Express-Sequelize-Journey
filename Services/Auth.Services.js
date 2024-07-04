@@ -25,7 +25,7 @@ class AuthServices {
         return user
     }
 
-    async signJwt() {
+    async signJwt(user) {
         const payload = { sub: user.id }
         const secret = process.env.JWT_SECRET
 
