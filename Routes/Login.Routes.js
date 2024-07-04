@@ -5,22 +5,21 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const secret = process.env.JWT_SECRET
-
 const router = Router();
 
-router.post('/login', passport.authenticate('local', {session: false}), async (req, res, next) => {
+router.post('/login', passport.authenticate('local', { session: false }), async (req, res, next) => {
     try {
-        //in this constant the info of user is being saved
+        //here the info of user is being saved
         const user = req.user
 
-        //payload for the jwt
+        //payload for the jwt and secret
         const payload = {
             sub: user.id
         }
 
-        const token = jwt.sign(payload, secret)
+        const secret = process.env.JWT_SECRET
 
+        const token = jwt.sign(payload, secret)
 
         res.json({
             user,
