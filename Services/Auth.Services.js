@@ -1,6 +1,6 @@
 import UserServices from "../Services/User.Model.js";
 import bcrypt from 'bcrypt'
-import boom, { unauthorized } from "@hapi/boom";
+import boom from "@hapi/boom";
 import jwt from 'jsonwebtoken'
 import dotenv from "dotenv";
 
@@ -11,12 +11,12 @@ const userServices = new UserServices()
 class AuthServices {
 
     async findUser (email, password) {
-        //find
+        
         const user = await userServices.findByEmail(email);
         if(!user){
             throw boom.unauthorized();
         }
-        const passwordCompare = await bcrypt.compare(user.password, password);
+        const passwordCompare = await bcrypt.compare(password, user.password);
         if(!passwordCompare){
             throw boom.unauthorized();
         }
