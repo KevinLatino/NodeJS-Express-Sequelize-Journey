@@ -11,7 +11,7 @@ const userServices = new UserServices()
 class AuthServices {
 
     async findUser (email, password) {
-        
+        //
         const user = await userServices.findByEmail(email);
         if(!user){
             throw boom.unauthorized();
